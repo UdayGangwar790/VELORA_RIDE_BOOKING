@@ -17,12 +17,13 @@ const app = express();
 connectDB();
 
 // CORS configuration
-app.use(
-  cors({
-    origin: process.env.SOCKET_ORIGIN || "http://localhost:5173",
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://velora-frontend.onrender.com"
+  ],
+  credentials: true
+}));
 
 // Middlewares
 app.use(express.json());

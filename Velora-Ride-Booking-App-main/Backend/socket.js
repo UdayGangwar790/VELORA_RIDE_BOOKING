@@ -11,14 +11,15 @@ let io;
 // INITIALIZE SOCKET
 function initializeSocket(server) {
 
-  io = socketIo(server, {
-
-    cors: {
-      origin: process.env.SOCKET_ORIGIN || "*",
-      methods: ["GET", "POST"],
-    },
-
-  });
+  const io = socketIo(server, {
+  cors: {
+    origin: [
+      "http://localhost:5173",
+      "https://velora-frontend.onrender.com"
+    ],
+    methods: ["GET", "POST"]
+  }
+});
 
   io.on("connection", (socket) => {
 
