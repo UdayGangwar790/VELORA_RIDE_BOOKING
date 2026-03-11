@@ -13,10 +13,7 @@ function initializeSocket(server) {
 
   const io = socketIo(server, {
   cors: {
-    origin: [
-      "http://localhost:5173",
-      "https://velora-frontend.onrender.com"
-    ],
+    origin: process.env.SOCKET_ORIGIN,
     methods: ["GET", "POST"]
   }
 });
