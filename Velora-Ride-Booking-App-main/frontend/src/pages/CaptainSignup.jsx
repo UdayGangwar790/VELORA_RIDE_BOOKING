@@ -39,6 +39,7 @@ const CaptainSignup = () => {
 			`${import.meta.env.VITE_BASE_URL}/captains/register`,
 			CaptainData
 		);
+	
 
 		if (response.status === 201) {
 			const data = response.data;
